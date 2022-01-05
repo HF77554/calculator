@@ -3,7 +3,7 @@ import CalcButton from "./CalcButton";
 
 const ButtonCol = ({ row, onInput }) => {
   return (
-    <Row className="mb-2">
+    <Row className="mb-1">
       {row.map((col) => (
         <Col key={col.value}>
           <CalcButton key={col.value} input={col} onInput={onInput} />
