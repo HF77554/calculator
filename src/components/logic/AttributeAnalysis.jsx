@@ -3,11 +3,12 @@ import Number from "./AttributeLogic/Number";
 const AttributeAnalysis = (display, input) => {
   const attribute = input.attribute;
   const oldDisplay = display;
+  const userInput = input.value
 
   switch (attribute) {
     case "number":
-      const newDisplay = Number(oldDisplay, input);
-      console.log(newDisplay);
+      const newDisplay = Number(oldDisplay, userInput);
+      return newDisplay;
       break;
     case "calculation":
       console.log(input);

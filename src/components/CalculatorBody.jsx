@@ -7,19 +7,20 @@ import InputHub from "./input/InputHub";
 import AttributeAnalysis from "./logic/AttributeAnalysis";
 
 const CalculatorBody = () => {
-  const [display, displayTask] = useState("123");
+  const [display, displayTask] = useState("12345687");
+  const [displayHistory, displayHistoryTask] =  useState("12345687");
 
-    const userInputHandler = (input) => {
-        console.log(input)
-        //AttributeAnalysis(display, input);
-    };
+  const userInputHandler = (input) => {
+      const newDisplay = AttributeAnalysis(display, input);
+      displayTask(newDisplay)
+  };
 
   return (
     <Container
       style={{ width: "500px" }}
       className="rounded mt-5 border border-dark bg bg-secondary"
     >
-        <MainDisplay />
+        <MainDisplay onDisplay={display} onHistory={displayHistory}/>
         <InputHub onInput={userInputHandler} />
     </Container>
   );

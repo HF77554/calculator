@@ -1,7 +1,9 @@
-const HistoryDisplay = () => {
+import './calculationDisplay.css'
+
+const HistoryDisplay = ({onHistory}) => {
     return (
-      <div>
-        <h4>HistoryDisplay</h4>
+      <div className='calculationDisplay'>
+        <h4 className='calculationHistory'>{onHistory}</h4>
       </div>
     );
   };

@@ -1,6 +1,7 @@
-const Number = ({ display, data }) => {
-    const oldDisplay = display.value;
-    const newDisplay = oldDisplay + data.value;
-    return newDisplay;
+const Number = (oldDisplay, input) => {
+    if (oldDisplay){
+      return oldDisplay+input
+    }
+    return input;
   };
-  export default Number;
+export default Number;

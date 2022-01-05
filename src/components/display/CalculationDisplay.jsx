@@ -1,7 +1,9 @@
-const CalculationDisplay = () => {
+import './calculationDisplay.css'
+
+const CalculationDisplay = ({onDisplay}) => {
     return (
-      <div>
-        <h4>CalculationDisplay</h4>
+      <div className='calculationDisplay'>
+        <h3 className='calculationNumber'>{onDisplay}</h3>
       </div>
     );
   };
