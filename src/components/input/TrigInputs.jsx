@@ -9,20 +9,26 @@ import {TRIG_BUTTONS} from "../logic/ButtonConstant";
 
 const TrigInputs = ({ onInput }) => {
   const constGrid = TRIG_BUTTONS;
-  const [collapse, collapseTask] = useState(false);
+  const [gridState, gridStateTask] = useState([constGrid[0]])
+  const [collapsed, collapsedTask] = useState(true);
 
   const onPressHandler = () => {
-    collapseTask(!collapse);
+    collapsedTask(!collapsed);
+    if (!collapsed) {
+      gridStateTask([constGrid[0]])
+    } else {
+      gridStateTask(constGrid)
+    }
   };
 
   return (
     <Container className="mb-1">
       <Row>
         <Col xs={9}>
-          <ButtonGrid grid={constGrid} onInput={onInput}/>
+          <ButtonGrid grid={gridState} onInput={onInput}/>
         </Col>
         <Col xs={3}>
-          <ArrowButton onCollapse={collapse} onPress={() => onPressHandler()} />
+          <ArrowButton onCollapse={collapsed} onPress={() => onPressHandler()} />
         </Col>
       </Row>
     </Container>

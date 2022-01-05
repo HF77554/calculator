@@ -5,7 +5,7 @@ import GenInputs from "./GenInputs";
 
 const InputHub = ({ onInput }) => {
   return (
-    <Container className="mb-3">
+    <Container className="mb-2">
       <TrigInputs onInput={onInput} />
       <GenInputs onInput={onInput} />
     </Container>

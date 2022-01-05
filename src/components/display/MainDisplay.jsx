@@ -5,8 +5,7 @@ import CalculationDisplay from "./CalculationDisplay";
 
 const MainDisplay = () => {
   return (
-    <Container className="mt-2 rounded bg bg-dark text-light">
-      <h3>MainDisplay</h3>
+    <Container className="mt-2 mb-3 rounded bg bg-dark text-light">
       <HistoryDisplay />
       <CalculationDisplay />
     </Container>
