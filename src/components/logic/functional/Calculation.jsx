@@ -7,15 +7,15 @@ const Calculation = (display) => {
 
     switch (operator) {
         case "+":
-            return (oldVal+newVal)
+            return (oldVal+newVal).toString()
         case "-":
-            return (oldVal-newVal)
+            return (oldVal-newVal).toString()
         case "/":
-            return (oldVal/-newVal)
-        case "X":
-            return (oldVal*newVal)
+            return (oldVal/-newVal).toString()
+        case "x":
+            return (oldVal*newVal).toString()
         case "-":
-            return (oldVal-newVal)
+            return (oldVal-newVal).toString()
         default:
             return;
     }
