@@ -1,9 +1,8 @@
-import './calculationDisplay.css'
+const HistoryDisplay = ({ onHistory}) => {
 
-const HistoryDisplay = ({onHistory}) => {
     return (
-      <div className='calculationDisplay'>
-        <h4 className='calculationHistory'>{onHistory}</h4>
+      <div>
+        <h4 className='historydisplay text-end text-break'>{onHistory}</h4>
       </div>
     );
   };

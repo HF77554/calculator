@@ -1,9 +1,7 @@
-import './calculationDisplay.css'
-
 const CalculationDisplay = ({onDisplay}) => {
     return (
-      <div className='calculationDisplay'>
-        <h3 className='calculationNumber'>{onDisplay}</h3>
+      <div>
+        <h3 className='text-end text-break'>{onDisplay.oldValue}{onDisplay.operator}{onDisplay.newValue}</h3>
       </div>
     );
   };

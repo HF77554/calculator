@@ -1,0 +1,10 @@
+.maindisplay {
+    min-height: 80px;
+    margin-right: 10px;
+    pointer-events: none;
+}
+
+.historydisplay {
+    min-height: 40px;
+    color: rgba(255, 255, 255, 0.5);
+}

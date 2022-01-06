@@ -1,25 +1,51 @@
-import Number from "./AttributeLogic/Number";
+import StringAddition from "./functional/StringAddition";
+import Calculation from "./functional/Calculation";
 
-const AttributeAnalysis = (display, input) => {
+
+const AttributeAnalysis = ({display, history, input}) => {
   const attribute = input.attribute;
-  const oldDisplay = display;
   const userInput = input.value
-
+  const resetDisplay ={oldValue:'', operator:'', newValue:''}
+  
   switch (attribute) {
     case "number":
-      const newDisplay = Number(oldDisplay, userInput);
-      return newDisplay;
-      break;
+      return {
+          display:{...display, newValue: StringAddition(display.newValue, userInput)},
+          history:history
+      }
     case "calculation":
-      console.log(input);
-      console.log("calculation");
-      break;
+      return {
+        display:{oldValue:display.newValue, operator:userInput, newValue:''},
+        history:history
+      }
     case "result":
-      console.log(input);
-      console.log("result");
-      break;
+      const result = Calculation(display)
+
+      if(!display.oldValue || !display.operator ||!display.newValue) {
+        return {
+          display:display,
+          history:history
+        }
+      };
+
+      //in case result not in Calculation, reset display
+      if (!result) {
+        return {
+          display:resetDisplay,
+          history:history
+        }
+      }
+  
+      return {
+        display:resetDisplay,
+        history:[...history, result]
+      }
     default:
-      console.log(`Sorry, ${attribute} does not exist.`);
+      console.log(`Sorry, ${attribute} has not been added yet.`);
+      return {
+        display:display,
+        history:history
+      }
   }
 };
 export default AttributeAnalysis;
