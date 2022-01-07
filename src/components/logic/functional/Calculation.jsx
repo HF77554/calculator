@@ -11,7 +11,7 @@ const Calculation = (display) => {
         case "-":
             return (oldVal-newVal).toString()
         case "/":
-            return (oldVal/-newVal).toString()
+            return (oldVal/newVal).toString()
         case "x":
             return (oldVal*newVal).toString()
         case "-":

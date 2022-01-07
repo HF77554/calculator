@@ -13,7 +13,6 @@ const CalculatorBody = () => {
             
     const res = AttributeAnalysis({display, input});
     displayTask(res)
-    console.log(display.history)
 
   };
 

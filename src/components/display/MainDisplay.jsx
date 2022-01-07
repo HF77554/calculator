@@ -7,7 +7,7 @@ import CalculationDisplay from "./CalculationDisplay";
 
 const MainDisplay = ({onDisplay, onHistory}) => {
   return (
-    <Container className="mt-3 mb-3 rounded bg bg-dark text-light maindisplay">
+    <Container className="mt-3 mb-3 rounded bg bg-dark text-light mainDisplay">
       <Row>
         <HistoryDisplay onHistory={onHistory}/>
       </Row>
