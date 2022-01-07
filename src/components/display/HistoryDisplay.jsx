@@ -1,8 +1,10 @@
 const HistoryDisplay = ({ onHistory }) => {
   
   return (
-    <div>
-      <h4 className='historydisplay text-end text-break'>{onHistory}</h4>
+    <div className="historydisplay">
+      {onHistory && onHistory.map( history => 
+        <h4 className='text-end text-break' key={history+Date.now()}>{history}</h4>)
+      }
     </div>
   );
 };
