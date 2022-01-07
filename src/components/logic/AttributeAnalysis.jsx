@@ -1,65 +1,41 @@
 import StringAddition from "./functional/StringAddition";
 import Calculation from "./functional/Calculation";
 
-const AttributeAnalysis = ( { display, history, input }) => {
+const AttributeAnalysis = ( {display, input}) => {
   const attribute = input.attribute;
-  const userInput = input.value
-  const resetDisplay = {oldValue:'', operator:'', newValue:''}
-  
-  
+  const userInput = input.value;
+  const userHistory = display.history
+    
   //switch for each button class
   switch (attribute) {
     case "number":
-      return {
-          display:{...display, newValue: StringAddition(display.newValue, userInput)},
-          history:[...history]
-      }
+      return {...display, newValue: StringAddition(display.newValue, userInput)}
     case "calculation":
       if (display.newValue && !display.oldValue){
-        return {
-          display:{oldValue:display.newValue, operator:userInput, newValue:''},
-          history:[...history]
-        }
-      } else if (!display.oldValue && !display.newValue) {
-        const newHistory = history
-        console.log('Check Value')
-        console.log(newHistory)
+        return {...display, oldValue:display.newValue, operator:userInput, newValue:''}
 
-        return {
-          display:{oldValue:history.pop(), operator:userInput, newValue:''},
-          history:[...newHistory]
-        }
+      } else if (!display.oldValue && !display.newValue) {  
+        return {...display, oldValue:userHistory.pop(), operator:userInput, newValue:''}
       } 
     case "result":
       const result = Calculation(display)
 
       //in case the '=' is pressed before 
       if(!display.oldValue || !display.operator ||!display.newValue) {
-        return {
-          display:display,
-          history:[...history]
-        }
+        return {...display}
       };
 
       //in case result not in Calculation, reset display
       if (!result) {
-        return {
-          display:resetDisplay,
-          history:[...history]
-        }
+        return {oldValue:'', operator:'', newValue:'', history:[...userHistory]}
       }
       
       //returns calculation
-      return {
-        display:resetDisplay,
-        history:[...history, result]
-      }
+      return {oldValue:'', operator:'', newValue:'', history:[...userHistory, result]}
+
     default:
       console.log(`Sorry, ${attribute} has not been added yet.`);
-      return {
-        display:display,
-        history:[...history]
-      }
+      return {...display}
   }
 };
 export default AttributeAnalysis;
