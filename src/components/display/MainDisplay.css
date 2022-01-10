@@ -3,8 +3,10 @@
 }
 
 .generalDisplay {
+    margin-top: 8px;
     height: 40px;
-    color: rgb(255, 255, 255)
+    color: rgb(255, 255, 255);
+    cursor: context-menu;
 }
 
 .historyDisplay {
@@ -12,20 +14,37 @@
     height: 40px;
     color: rgba(255, 255, 255, 0.5);
     overflow: hidden;    
-    
+    cursor: context-menu;
 }
 
 .historyDisplayOverflow {
     padding-top: 10px;
-    min-height: 70px;
-    max-height: 200px;
+    height: 200px;
     color: rgba(255, 255, 255, 0.5);
-    overflow: auto;
-    
+    overflow-y: scroll;
+    cursor: pointer;
 }
 
-/*
-display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-*/
+.historyItem:hover {
+    color: rgb(252, 252, 252);
+    font-size: 30px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

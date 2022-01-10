@@ -21,7 +21,7 @@ const CalculatorBody = () => {
       style={{ width: "500px" }}
       className="rounded mt-5 border border-dark bg bg-secondary"
     >
-        <MainDisplay onDisplay={display} />
+        <MainDisplay onDisplay={display} onSelect={userInputHandler}/>
         <InputHub onInput={userInputHandler} />
     </Container>
   );
