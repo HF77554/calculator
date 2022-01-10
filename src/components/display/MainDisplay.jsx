@@ -5,11 +5,11 @@ import './MainDisplay.css'
 import HistoryDisplay from "./HistoryDisplay";
 import CalculationDisplay from "./CalculationDisplay";
 
-const MainDisplay = ({onDisplay, onHistory}) => {
+const MainDisplay = ({onDisplay}) => {
   return (
     <Container className="mt-3 mb-3 rounded bg bg-dark text-light mainDisplay">
       <Row>
-        <HistoryDisplay onHistory={onHistory}/>
+        <HistoryDisplay onDisplay={onDisplay}/>
       </Row>
       <Row>
         <CalculationDisplay onDisplay={onDisplay}/>

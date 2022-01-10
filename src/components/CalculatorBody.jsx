@@ -7,7 +7,7 @@ import InputHub from "./input/InputHub";
 import AttributeAnalysis from "./logic/AttributeAnalysis";
 
 const CalculatorBody = () => {
-  const [display, displayTask] = useState({oldValue:'', operator:'', newValue:'', history:''});
+  const [display, displayTask] = useState({oldValue:'', operator:'', newValue:'', history:[]});
 
   const userInputHandler = (input) => {
             
@@ -21,7 +21,7 @@ const CalculatorBody = () => {
       style={{ width: "500px" }}
       className="rounded mt-5 border border-dark bg bg-secondary"
     >
-        <MainDisplay onDisplay={display} onHistory={display.history}/>
+        <MainDisplay onDisplay={display} />
         <InputHub onInput={userInputHandler} />
     </Container>
   );

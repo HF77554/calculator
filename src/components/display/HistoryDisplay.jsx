@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import ArrowButton from "../reusable/ArrowButton";
 import HistoryItems from './HistoryItems';
 
-const HistoryDisplay = ({ onHistory }) => {
+const HistoryDisplay = ({ onDisplay }) => {
   const [classStyle, classStyleTask] = useState('historyDisplay')
   const [collapsed, collapsedTask] = useState(true);
 
@@ -19,9 +19,9 @@ const HistoryDisplay = ({ onHistory }) => {
   
   return (
     <Container>
-      <Row>
+      <Row className='mt-2'>
         <Col className={classStyle} xs={10}>
-          {onHistory && <HistoryItems onHistory={onHistory} onCollapsed={collapsed}/>
+          {onDisplay && <HistoryItems onDisplay={onDisplay} onCollapsed={collapsed}/>
           }
         </Col>
         <Col xs={2}>

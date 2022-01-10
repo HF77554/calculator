@@ -1,15 +1,23 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-const HistoryItems = ({onHistory, onCollapsed}) => {
+const HistoryItems = ({onDisplay, onCollapsed}) => {
 
-    console.log(onHistory)
+    const [lastValue, lastValueTask] = useState()
+    
+
+    useEffect(() => {
+        const arrayCopy = onDisplay.history
+        const arrayLastVal = arrayCopy[arrayCopy.length - 1]
+        lastValueTask(arrayLastVal)
+        
+      }, [onDisplay]);
 
     return(
         <div>
             {onCollapsed ?
-                "test"
+            <h4 className='text-end text-break'>{lastValue}</h4>
             :
-                onHistory.map( history => <h4 className='text-end text-break' key={Math.floor(Math.random()*Math.random()*1000)}>{history}</h4>)
+            onDisplay.history.map( history => <h4 className='text-end text-break' key={Math.random()*Math.random()*1000}>{history}</h4>)
             }
         </div>
     )
